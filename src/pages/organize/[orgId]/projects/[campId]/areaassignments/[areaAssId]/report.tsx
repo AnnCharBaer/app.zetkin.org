@@ -31,6 +31,7 @@ import {
   useTheme,
   Grid,
 } from '@mui/material';
+import Head from 'next/head';
 
 import { AREAS } from 'utils/featureFlags';
 import AreaAssignmentLayout from 'features/areaAssignments/layouts/AreaAssignmentLayout';
@@ -131,6 +132,10 @@ const AreaAssignmentReportPage: PageWithLayout<AreaAssignmentReportProps> = ({
   const isReportEditable = !areaAssignmentFuture.data?.start_date || unlocked;
 
   return (
+    <>
+      <Head>
+        <title>{areaAssignmentFuture.data?.title}</title>
+      </Head>
     <ZUIFuture future={areaAssignmentFuture}>
       {(assignment: ZetkinAreaAssignment) => (
         <Grid
@@ -557,6 +562,7 @@ const AreaAssignmentReportPage: PageWithLayout<AreaAssignmentReportProps> = ({
         </Grid>
       )}
     </ZUIFuture>
+    </>
   );
 };
 
