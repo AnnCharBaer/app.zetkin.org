@@ -136,28 +136,28 @@ const AreaAssignmentReportPage: PageWithLayout<AreaAssignmentReportProps> = ({
       <Head>
         <title>{areaAssignmentFuture.data?.title}</title>
       </Head>
-    <ZUIFuture future={areaAssignmentFuture}>
-      {(assignment: ZetkinAreaAssignment) => (
-        <Grid
-          container
-          direction={isMobile ? 'column-reverse' : 'row'}
-          spacing={2}
-        >
-          <Grid size={{ md: 8, xs: 12 }}>
-            <Box>
-              {assignment.metrics.map((metric) => (
-                <Card key={metric.id} sx={{ mb: 2 }}>
-                  <CardContent>
-                    <Box display="flex">
-                      <Box
-                        display="flex"
-                        flexDirection="column"
-                        flexGrow={1}
-                        gap={1}
-                      >
-                        <Box
-                          alignItems="flex-start"
-                          display="flex"
+        <ZUIFuture future={areaAssignmentFuture}>
+          {(assignment: ZetkinAreaAssignment) => (
+            <Grid
+              container
+              direction={isMobile ? 'column-reverse' : 'row'}
+              spacing={2}
+            >
+              <Grid size={{ md: 8, xs: 12 }}>
+                <Box>
+                  {assignment.metrics.map((metric) => (
+                    <Card key={metric.id} sx={{ mb: 2 }}>
+                      <CardContent>
+                        <Box display="flex">
+                          <Box
+                            display="flex"
+                            flexDirection="column"
+                            flexGrow={1}
+                            gap={1}
+                          >
+                            <Box
+                              alignItems="flex-start"
+                              display="flex"
                           justifyContent="space-between"
                         >
                           <Box alignItems="center" display="flex">
